@@ -1,0 +1,4 @@
+include 'SpringCloud-Config'
+include 'SpringCloud-Server1'
+include 'SpringCloud-Server2'
+include 'SpringCloud-Server3'
