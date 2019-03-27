@@ -1,0 +1,24 @@
+// 所有子專案的通用配置
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	
+	// JVM 版本號要求
+	sourceCompatibility = 1.8
+  	targetCompatibility = 1.8
+  	
+  	// 定義版本號
+  	ext {
+  		springVersion = '4.3.3.RELEASE'
+  	}
+  	
+  	repositories {
+    	mavenCentral()
+  	}
+  	
+  	// 通用依賴
+  	dependencies {
+  	
+  	}
+
+}
