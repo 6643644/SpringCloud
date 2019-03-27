@@ -1,3 +1,4 @@
+// 綁定
 buildscript {
     ext {
         springBootVersion = '1.5.17.RELEASE'
