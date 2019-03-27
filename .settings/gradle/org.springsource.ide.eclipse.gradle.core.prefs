@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Tue Mar 26 18:45:16 CST 2019
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;SpringCloud-Config;SpringCloud-Server1;SpringCloud-Server2;SpringCloud-Server3;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=

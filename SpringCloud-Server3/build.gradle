@@ -1,12 +1,28 @@
-apply plugin: 'java'
-apply plugin:'eclipse'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
 
 
 repositories {
-   mavenCentral()
+    mavenCentral()
 }
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
-	compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
-    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+	compile("org.springframework.boot:spring-boot-starter-web")
 }
+
+
+
+
