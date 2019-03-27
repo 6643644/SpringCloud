@@ -1,7 +1,21 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.17.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 // 所有子專案的通用配置
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
+	apply plugin: 'org.springframework.boot'
+	
 	
 	// JVM 版本號要求
 	sourceCompatibility = 1.8
@@ -9,7 +23,7 @@ subprojects {
   	
   	// 定義版本號
   	ext {
-  		springVersion = '4.3.3.RELEASE'
+  		springBootVersion = '1.5.17.RELEASE'
   	}
   	
   	repositories {
@@ -18,7 +32,8 @@ subprojects {
   	
   	// 通用依賴
   	dependencies {
-  	
+  		compile("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  		compile 'org.springframework.boot:spring-boot-starter-web'
   	}
 
 }
