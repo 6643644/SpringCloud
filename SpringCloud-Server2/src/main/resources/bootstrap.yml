@@ -1,2 +1,6 @@
-server:  
-  port: 8992 
+spring:
+  application:
+    name: config-server2
+  cloud:
+    config:
+      uri: http://localhost:8990/

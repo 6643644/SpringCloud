@@ -21,12 +21,13 @@ targetCompatibility = 1.8
 repositories {
 	mavenCentral()
 }
-    
+
+// 取得spring-cloud-config-server (server端)的依賴
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.cloud:spring-cloud-config-server')
 }
 
+// 以下套件尚未研究使用原因，如果不使用以下語法會導致spring-cloud-config-server找不到依賴專案會出現錯誤。
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR5"
