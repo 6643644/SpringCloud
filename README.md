@@ -9,7 +9,7 @@
 
 先練習Gradle建構 與Spring Boot的配置
 
-基本流程:
+基本流程:</br>
 1.建議Gradle專案，有父專案與多個子專案。</br>
 2.建立spring boot專案。</br>
 3.建立Spring Cloud專案，其中分成Spring Cloud Config Server 與 Spring Cloud Config Client 兩個專案。</br>
