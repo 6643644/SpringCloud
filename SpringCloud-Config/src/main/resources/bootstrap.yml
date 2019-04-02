@@ -1,7 +1,7 @@
 server:
   port: 8990
   
-#取得設定檔案(從遠端的git)
+#取得其他service設定檔案(從遠端的git)
 spring:
   cloud:
     config:
@@ -14,3 +14,9 @@ spring:
 #          password: XXXX
           search-paths: test-spring-cloud-config
           default-label: master
+          
+          
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8994/eureka/
