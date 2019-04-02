@@ -2,10 +2,13 @@ package com.example.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.ComponentScan;
 /**
  * @author Miles
  * 
+ * 該專案為Spring Cloud Eureka Server端
  * SpringBoot 的入口:
  * 1. @ComponentScan 自動掃描
  * 2. @SpringBootApplication SprngBoot 啟動路口
@@ -14,6 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
  * 
  */
 @ComponentScan(basePackages = { "com.example" })
+@EnableEurekaServer
 @SpringBootApplication
 public class Main {
 
