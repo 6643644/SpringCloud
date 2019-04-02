@@ -1,2 +1,7 @@
-server:  
-  port: 8993
+
+spring:
+  application:
+    name: config-server3
+  cloud:
+    config:
+      uri: http://localhost:8990/
