@@ -3,19 +3,18 @@ package com.example.main;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.ComponentScan;
 
 
 /**
  * @author Miles
  * 
- * 該專案為Spring Cloud Eureka Server端
- * SpringBoot 的入口:
- * 1. @ComponentScan 自動掃描
- * 2. @SpringBootApplication SprngBoot 啟動路口
+ * 閰脣��Spring Cloud Eureka Server蝡�
+ * SpringBoot ���:
+ * 1. @ComponentScan ������
+ * 2. @SpringBootApplication SprngBoot ���楝�
  * 
- * 注意:如果SpringBootAppliction的路口放在某個目錄底下，當我們啟動SpringBoot並且掃描Bean的產生時，只會掃描路口所屬的路徑底下。
+ * 瘜冽��:憒�pringBootAppliction��楝����������������pringBoot銝虫���ean����������楝���撅祉�楝敺����
  * 
  */
 @ComponentScan(basePackages = { "com.example" })
