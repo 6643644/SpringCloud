@@ -1,5 +1,6 @@
 // include 多個子專案
-include 'SpringCloud-Config'
-include 'SpringCloud-Server1'
-include 'SpringCloud-Server2'
-include 'SpringCloud-Server3'
+include 'SpringCloud-Config'  //Spring Cloud Config Server
+include 'SpringCloud-Eureka'  //Spring Cloud Config Eureka & Spring Cloud Config Client
+include 'SpringCloud-Server1' //Spring Cloud Config Client
+include 'SpringCloud-Server2' //Spring Cloud Config Client
+include 'SpringCloud-Server3' //Spring Cloud Config Client

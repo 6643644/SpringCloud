@@ -4,5 +4,5 @@ spring:
   cloud:
     config:
       uri: http://localhost:8990/
-      profile: config1
+      profile: eureka1
       label: master

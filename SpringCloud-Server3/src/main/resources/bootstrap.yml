@@ -1,6 +1,8 @@
 spring:
   application:
-    name: eureka-service4
+    name: service
   cloud:
     config:
       uri: http://localhost:8990/
+      profile: config3
+      label: master

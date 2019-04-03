@@ -1,6 +1,8 @@
 spring:
   application:
-    name: config-service2
+    name: service
   cloud:
     config:
       uri: http://localhost:8990/
+      profile: config2
+      label: master
