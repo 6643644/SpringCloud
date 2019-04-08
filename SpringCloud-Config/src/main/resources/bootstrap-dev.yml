@@ -9,15 +9,14 @@ spring:
     config:
       server:
         git:
-#          uri: C:/doc/.git
-          uri: https://github.com/6643644/test-spring-cloud-config-server.git
+          uri: C:/doc/.git
+#          uri: https://github.com/6643644/test-spring-cloud-config-server.git
 #          以上URI 可以直接下載.git路徑的直接使用
-          username: q543165@gmail.com
-          password: SimpleGitHub6
+#          username: XXXX
+#          password: XXXX
           default-label: master
           search-paths: properties #該git根目錄底下的子目錄
           
-
 eureka:
   client:
     serviceUrl:
