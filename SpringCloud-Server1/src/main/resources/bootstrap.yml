@@ -3,6 +3,7 @@ spring:
     name: service
   cloud:
     config:
-      uri: http://localhost:8990/
+      uri: http://localhost:8891/
+      name: service
       profile: config1
       label: master
