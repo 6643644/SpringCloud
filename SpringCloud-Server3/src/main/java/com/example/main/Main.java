@@ -8,14 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author Miles
- * 
- * 閰脣��Spring Cloud Eureka Server蝡�
- * SpringBoot ���:
- * 1. @ComponentScan ������
- * 2. @SpringBootApplication SprngBoot ���楝�
- * 
- * 瘜冽��:憒�pringBootAppliction��楝����������������pringBoot銝虫���ean����������楝���撅祉�楝敺����
- * 
  */
 @ComponentScan(basePackages = { "com.example" })
 @EnableDiscoveryClient

@@ -10,17 +10,8 @@ public class TestConfigMain {
 	@Value("${spring.application.name}")
 	private String appName;
 
-//	@Value("${server.port}")
-//	private String port;
-
 	@RequestMapping(value = "/appName")
 	public String getAppName() {
 		return appName;
 	}
-
-//	@RequestMapping(value = "/serverPort")
-//	public String getServerPort() {
-//		return port;
-//	}
-
 }
