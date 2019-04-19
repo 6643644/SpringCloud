@@ -8,6 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author Miles
+ * @EnableBatchProcessing 註冊SpringBatch
+ * 
  */
 @ComponentScan(basePackages = { "com.example" })
 @EnableDiscoveryClient

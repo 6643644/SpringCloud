@@ -1,5 +1,5 @@
 server:
-  port: 8891
+  port: 18990
   
 #取得其他service設定檔案(從遠端的git)
 # 現在抓配置文件有一個問題，該問題就是因為properties與yml取的某些內容會無法取得，例如server.port可以在properties中取得但是yml就無法取得，該問題可能後續要研究。
@@ -19,4 +19,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8892/eureka/
+      defaultZone: http://localhost:28990/eureka/
