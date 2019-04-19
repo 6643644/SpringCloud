@@ -9,5 +9,8 @@ public interface FeignClientResource {
 
 	@RequestMapping(value = "/Test1", method = RequestMethod.GET)
 	public String testFeignClinetResource();
+	
+	@RequestMapping(value = "/TestJPA", method = RequestMethod.GET)
+	public void testJPA();
 
 }

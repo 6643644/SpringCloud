@@ -17,5 +17,10 @@ public class MainRestController {
 		return feignClientResource.testFeignClinetResource();
 	}
 	
+	@RequestMapping("/testJPA")
+	public String testJPA() {
+		return feignClientResource.testFeignClinetResource();
+	}
+	
 	
 }
