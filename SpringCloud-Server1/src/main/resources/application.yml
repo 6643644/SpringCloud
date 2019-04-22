@@ -1,0 +1,12 @@
+# 
+# 設定Log顯示級別:語法 logging.level.#:LEVEL;其中#為package;其中LEVEL為級別
+# 設定Log存放路徑:語法 logging.path:PATH，如果PATH沒有路徑則在該目錄底下產生
+# 指定在某個路徑底下產生Log物件:語法 logging.file:C:/Spring Cloud Log/SpringCloudLog.log
+#logging:
+#  level:
+#    com.example.controller: info
+#    com.example.main: debug
+#    com.example.resource: debug
+  # file: C:/Spring Cloud Log/SpringCloudLog.log
+logging:
+  config: classpath:log4j2.yml 

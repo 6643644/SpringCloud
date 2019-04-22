@@ -6,6 +6,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/******************************************************************************************
+ * @author Miles
+ * 
+ * 這是一個entity
+ * 1. @Entity
+ * 2. @Table 表示綁定哪個一個table名稱
+ * 3. @Id PK
+ * 4. @Column 對應欄位
+ * 
+ *******************************************************************************************/
 @Entity
 @Table(name = "user")
 public class User {

@@ -28,6 +28,27 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile('org.springframework.cloud:spring-cloud-starter-feign')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// Redis 
+	// compile('org.springframework.boot:spring-boot-starter-redis')
+	
+	// log4j2，並且加上這個才能辨認到log4j2.yml檔案 
+	compile('org.springframework.boot:spring-boot-starter-log4j2')
+	compile('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml')
+	
+	
+	//test
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+}
+
+//排除預設的jar 我們要排除log4j的預設和logback防止衝突
+configurations.all {
+      exclude group: 'log4j', module: 'log4j'
+      exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+      exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
+      exclude group: 'ch.qos.logback', module: 'logback-core'
+      exclude group: 'ch.qos.logback', module: 'logback-classic'
 }
 
 dependencyManagement {

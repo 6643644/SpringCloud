@@ -34,8 +34,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	// 暫時使用MySQL
 	compile('mysql:mysql-connector-java')
-	
+	//test
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
 
 dependencyManagement {
 	imports {
