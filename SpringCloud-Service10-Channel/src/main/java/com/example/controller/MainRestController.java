@@ -51,16 +51,11 @@ public class MainRestController {
 	}
 
 	@RequestMapping("/create")
-	public void createUser() {
+	public UserResponse createUser() {
 		UserRequest request = new UserRequest();
-		request.setName("Kevin");
-		request.setAddress("新北市板橋區文化路4段544號499樓");
-		try{
-		feignClientResource.createUser(request);
-		}catch(Exception e){
-			System.out.println("====================== Exception ======================");
-			e.printStackTrace();
-			System.out.println("====================== Exception ======================");
-		}
+		request.setName("John");
+		request.setAddress("新北市板橋區文化路6段544號499樓");
+		return feignClientResource.createUser(request);
+		
 	}
 }

@@ -45,13 +45,13 @@ public class MainRestController {
 	}
 
 	@RequestMapping(path = "/bus/jpa/createUser", method = RequestMethod.POST)
-	public void createUser(@RequestBody UserRequest request) {
+	public ResponseEntity<?> createUser(@RequestBody UserRequest request) {
 		log.info("createUser");
 		User user = new User();
 		user.setName(request.getName());
 		user.setAddress(request.getAddress());
-		userRepository.save(user);
-		
+		User reUser = userRepository.save(user);
+		return ResponseEntity.ok(reUser);
 	}
 
 }

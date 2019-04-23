@@ -21,6 +21,6 @@ public interface FeignClientResource {
 	public List<UserResponse> getAllUser();
 
 	@RequestMapping(value = "/bus/jpa/createUser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void createUser(@RequestBody UserRequest request);
+	public UserResponse createUser(@RequestBody UserRequest request);
 
 }
