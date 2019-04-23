@@ -31,7 +31,7 @@ public class MainRestController {
 	}
 
 	@RequestMapping("/bus/allUser")
-	public String testLog4j2() {
+	public List<User> testLog4j2() {
 		List<User> users = feignClientResource.getAllUser();
 		if(users!=null){
 			users.forEach(u->{
@@ -46,7 +46,7 @@ public class MainRestController {
 		log.error("getExceptionLogger===日誌測試");
 		log1.info("getBussinessLogger===日誌測試");
 		log2.debug("getDBLogger===日誌測試");
-		return "helloworld";
+		return users;
 	}
 
 }
