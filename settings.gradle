@@ -1,6 +1,7 @@
 // include 多個子專案
 include 'SpringCloud-Service01-Config'  //該服務(Service) 主要處理整體配置
 include 'SpringCloud-Service02-Eureka'  //該服務(Service) 主要處理Eureka的配置
+include 'SpringCloud-Service03-Zuul' //該服務(Service) 主要處理Zuul的配置
 include 'SpringCloud-Service10-Channel' //該服務(Service) 主要處理Channel
 include 'SpringCloud-Service11-Business' //該服務(Service) 主要處理Busines
 include 'SpringCloud-Service20-SpringBatch' //該服務(Service) 主要處理批次

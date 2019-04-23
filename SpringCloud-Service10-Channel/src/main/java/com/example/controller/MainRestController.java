@@ -1,11 +1,14 @@
 package com.example.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.resources.FeignClientResource;
+import com.example.resources.dto.User;
 import com.example.util.LogUtils;
 
 /******************************************************************************************
@@ -22,23 +25,26 @@ public class MainRestController {
 	@Autowired
 	FeignClientResource feignClientResource;
 
-	@RequestMapping("/test0")
-	public String testFeignClinetResource() {
-		return feignClientResource.testFeignClinetResource();
-	}
-
-	@RequestMapping("/testJPA")
+	@RequestMapping("/bus/test")
 	public String testJPA() {
 		return feignClientResource.testFeignClinetResource();
 	}
-	
-	@RequestMapping("/testLog4j2")
-	public String testLog4j2(){
+
+	@RequestMapping("/bus/allUser")
+	public String testLog4j2() {
+		List<User> users = feignClientResource.getAllUser();
+		if(users!=null){
+			users.forEach(u->{
+				System.out.println("User ID:"+u.getId()+";Name:"+u.getName()+";Address:"+u.getAddress());	
+			});
+		}else{
+			System.out.println("users is null...");
+		}
 		Logger log = LogUtils.getExceptionLogger();
-    	Logger log1 = LogUtils.getBussinessLogger();
-    	Logger log2 = LogUtils.getDBLogger();
-    	log.error("getExceptionLogger===日誌測試");
-    	log1.info("getBussinessLogger===日誌測試");
+		Logger log1 = LogUtils.getBussinessLogger();
+		Logger log2 = LogUtils.getDBLogger();
+		log.error("getExceptionLogger===日誌測試");
+		log1.info("getBussinessLogger===日誌測試");
 		log2.debug("getDBLogger===日誌測試");
 		return "helloworld";
 	}

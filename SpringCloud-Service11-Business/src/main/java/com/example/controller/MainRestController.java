@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,15 +30,14 @@ public class MainRestController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@RequestMapping("/Test1")
+	@RequestMapping("/bus/test")
 	public String testFeignClinetResourceClient() {
 		log.info("URL:/Test1;testFeignClinetResourceClient()");
 		return "testFeignClinetResource";
 	}
 
-	@RequestMapping("/TestJPA")
-	@ResponseBody
-	public List<User> getAllUserByJPA() {
+	@RequestMapping("/bus/allUser")
+	public ResponseEntity<?> getAllUserByJPA() {
 		log.info("URL:/TestJPA;getAllUserByJPA()");
 		List<User> users = new ArrayList<>();
 		users = userRepository.findAll();
@@ -47,7 +47,8 @@ public class MainRestController {
 
 			});
 		}
-		return users;
+		ResponseEntity<?> response = ResponseEntity.ok(users);
+		return response;
 	}
 
 }

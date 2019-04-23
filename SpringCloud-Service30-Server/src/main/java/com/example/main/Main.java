@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * @author Miles
  * 
- *         這個Service 我們把它當作所有前端request的入口，然後如果取得DB資訊則呼叫SpringCloud-Server2
+ *         該服務主要進行tomcat自定義配置
  * 
  *         1. @ComponentScan 自動掃描 2. @EnableDiscoveryClient 註冊 eureka 客戶端
  *         3. @EnableFeignClients 開啟Feign 聲明式Web Service客戶端

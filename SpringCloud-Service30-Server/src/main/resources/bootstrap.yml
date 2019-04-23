@@ -1,5 +1,5 @@
-server:
-  port: 58990
+# server:
+#  port: 58990
 
 #現在出現一個問題就是，我使用yml來配置所有client端資訊，但是不知道為何取得server端的yml配置一直無法取得，而使用properties卻可以正常取得，看上去的原因可能是優先問題
 spring:
