@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.resources.FeignClientResource;
-import com.example.resources.dto.User;
+import com.example.resources.dto.UserRequest;
+import com.example.resources.dto.UserResponse;
 import com.example.util.LogUtils;
 
 /******************************************************************************************
@@ -25,19 +26,19 @@ public class MainRestController {
 	@Autowired
 	FeignClientResource feignClientResource;
 
-	@RequestMapping("/bus/test")
+	@RequestMapping("/test")
 	public String testJPA() {
 		return feignClientResource.testFeignClinetResource();
 	}
 
-	@RequestMapping("/bus/allUser")
-	public List<User> testLog4j2() {
-		List<User> users = feignClientResource.getAllUser();
-		if(users!=null){
-			users.forEach(u->{
-				System.out.println("User ID:"+u.getId()+";Name:"+u.getName()+";Address:"+u.getAddress());	
+	@RequestMapping("/allUser")
+	public List<UserResponse> testLog4j2() {
+		List<UserResponse> users = feignClientResource.getAllUser();
+		if (users != null) {
+			users.forEach(u -> {
+				System.out.println("User ID:" + u.getId() + ";Name:" + u.getName() + ";Address:" + u.getAddress());
 			});
-		}else{
+		} else {
 			System.out.println("users is null...");
 		}
 		Logger log = LogUtils.getExceptionLogger();
@@ -49,4 +50,17 @@ public class MainRestController {
 		return users;
 	}
 
+	@RequestMapping("/create")
+	public void createUser() {
+		UserRequest request = new UserRequest();
+		request.setName("Kevin");
+		request.setAddress("新北市板橋區文化路4段544號499樓");
+		try{
+		feignClientResource.createUser(request);
+		}catch(Exception e){
+			System.out.println("====================== Exception ======================");
+			e.printStackTrace();
+			System.out.println("====================== Exception ======================");
+		}
+	}
 }

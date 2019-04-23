@@ -1,20 +1,10 @@
-package com.example.resources.dto;
+package com.example.model;
 
-public class User {
-
-	private Integer id;
+public class UserRequest {
 
 	private String name;
 
 	private String address;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

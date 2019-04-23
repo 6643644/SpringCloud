@@ -1,8 +1,11 @@
 package com.example.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,19 +17,22 @@ import javax.persistence.Table;
  * 2. @Table 表示綁定哪個一個table名稱
  * 3. @Id PK
  * 4. @Column 對應欄位
+ * 5. @GeneratedValue 自動產生 GenerationType.IDENTITY 對應SQL Server與MySQL;GenerationType.SEQUENCE 對應Oracle
  * 
  *******************************************************************************************/
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "USER")
+public class User implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
 	private Integer id;
 
-	@Column(name = "name")
+	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "address")
+	@Column(name = "ADDRESS")
 	private String address;
 
 	public Integer getId() {

@@ -1,25 +1,25 @@
 package com.example.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.User;
+import com.example.model.UserRequest;
 import com.example.repository.UserRepository;
 
 /******************************************************************************************
  * @author Miles
  * 
- * 該Service的入口端
- * 1. @RestController
- * 2. 使用了Logback，該日誌系統為Spring Boot內建預設的並且支援使用slf4j。
+ *         該Service的入口端 1. @RestController 2. 使用了Logback，該日誌系統為Spring
+ *         Boot內建預設的並且支援使用slf4j。
  * 
  *******************************************************************************************/
 @RestController
@@ -36,19 +36,22 @@ public class MainRestController {
 		return "testFeignClinetResource";
 	}
 
-	@RequestMapping("/bus/allUser")
+	@RequestMapping("/bus/jpa/allUser")
 	public ResponseEntity<?> getAllUserByJPA() {
 		log.info("URL:/TestJPA;getAllUserByJPA()");
-		List<User> users = new ArrayList<>();
-		users = userRepository.findAll();
-		if (users != null && !users.isEmpty()) {
-			users.forEach(u1 -> {
-				System.out.println("ID:" + u1.getId() + ";NAME:" + u1.getName() + ";ADDRESS:" + u1.getAddress());
-
-			});
-		}
+		List<User> users = userRepository.findAll();
 		ResponseEntity<?> response = ResponseEntity.ok(users);
 		return response;
+	}
+
+	@RequestMapping(path = "/bus/jpa/createUser", method = RequestMethod.POST)
+	public void createUser(@RequestBody UserRequest request) {
+		log.info("createUser");
+		User user = new User();
+		user.setName(request.getName());
+		user.setAddress(request.getAddress());
+		userRepository.save(user);
+		
 	}
 
 }
