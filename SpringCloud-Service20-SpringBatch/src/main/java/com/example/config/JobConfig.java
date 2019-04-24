@@ -48,7 +48,7 @@ import com.example.model.User;
  * JobRepository、JobLauncher、JobRegistry、PlatformTransactionManager、JobBuilderFactory、StepBuilderFactory以上的bean物件
  * 而@Configuration 也是必須註解，告知這是一個配置檔案。
  * 
- * 
+ * 參考網站:https://www.jianshu.com/p/3531323964d8
  * 
  */
 @Configuration
