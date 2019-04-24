@@ -48,7 +48,10 @@ import com.example.model.User;
  * JobRepository、JobLauncher、JobRegistry、PlatformTransactionManager、JobBuilderFactory、StepBuilderFactory以上的bean物件
  * 而@Configuration 也是必須註解，告知這是一個配置檔案。
  * 
- * 參考網站:https://www.jianshu.com/p/3531323964d8
+ * 參考網站:
+ * 
+ * 基礎教學:https://stevenitlife.blogspot.com/2018/05/spring-batch-getting-started.html
+ * 使用了分割機制(跟以上網站似乎有相容):https://www.jianshu.com/p/3531323964d8
  * 
  */
 @Configuration
