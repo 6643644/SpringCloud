@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -17,8 +19,14 @@ public class MainRestController {
 
 	@Autowired
 	Job importJob;
+	
+	@Autowired
+	Job importJobByP;
 
 	public JobParameters jobParameters;
+
+	@Autowired
+	DataSource dataSource;
 
 	// 定時執行
 	@RequestMapping("/job/start")
@@ -26,5 +34,19 @@ public class MainRestController {
 	public void execute() throws Exception {
 		jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters();
 		jobLauncher.run(importJob, jobParameters);
+	}
+	
+	// 定時執行
+		@RequestMapping("/job/startByP")
+		@Scheduled(cron = "0 0 0 10 * ?")
+		public void executeByP() throws Exception {
+			jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters();
+			jobLauncher.run(importJobByP, jobParameters);
+		}
+
+	// 定時執行
+	@RequestMapping("/job/test")
+	public void tets() throws Exception {
+		System.out.println("dataSource:" + dataSource);
 	}
 }
