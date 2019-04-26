@@ -1,5 +1,17 @@
 server:
   port: 28990
+
+#取得遠端配置(該配置的順序問題，需要再研究一下)
+spring:
+  application:
+    name: eureak
+  cloud:
+    config:
+      name: service
+      profile: eureka1
+      uri: http://localhost:18990/
+      label: master
+
 #設定 Eureka 註冊的路徑   
 #register-with-eureka 代表不註冊自己的service 
 #register-with-eureka: false
@@ -9,21 +21,4 @@ eureka:
         register-with-eureka: false
         fetch-registry: false
         serviceUrl:
-            defaultZone: http://localhost:28990/eureka/
-
-
----  
-spring:
-  application:
-    name: eureak
-
----  
-#取得遠端配置(該配置的順序問題，需要再研究一下)
-spring:
-  cloud:
-    config:
-      name: service
-      profile: eureka1
-      uri: http://localhost:18990/
-      label: master
-                      
+            defaultZone: http://localhost:28990/eureka/                   
