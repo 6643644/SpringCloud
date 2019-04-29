@@ -1,32 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.18.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
-
-sourceCompatibility = 1.5
-version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
-                   'Implementation-Version': version
-    }
-}
+apply plugin: 'org.springframework.boot'
+	
+// JVM 版本號要求
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
-
+    
 dependencies {
-    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+//=========================================Spring Cloud Security 需要使用的依賴 ==============================================
+	// Spring Cloud Security 需要使用的依賴
+	compile('org.springframework.cloud:spring-cloud-security')
+	compile('org.springframework.security.oauth:spring-security-oauth2')
+//=======================================================================================================================
 }
 
-test {
-    systemProperties 'property': 'value'
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR5"
+	}
 }
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
-}
+

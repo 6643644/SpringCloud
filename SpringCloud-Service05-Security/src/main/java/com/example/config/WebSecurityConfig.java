@@ -32,16 +32,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// riding,縮寫為:CSRF/XSRF。
 		http.authorizeRequests().anyRequest().authenticated().and().csrf().disable();
 
-		// http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/test").permitAll()
-		//
-		// .anyRequest().authenticated().and().formLogin()
-		//
-		// .loginPage("/test")
-		//
-		// .defaultSuccessUrl("/welcome").permitAll().and().logout().logoutUrl("/logout")
-		//
-		// .logoutSuccessUrl("/login").permitAll();
-
 		// 允許所有用戶訪問"/"與"/test"
 		http.authorizeRequests().antMatchers("/test").permitAll()
 
