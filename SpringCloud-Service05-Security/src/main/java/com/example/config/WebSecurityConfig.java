@@ -11,51 +11,48 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 /******************************************************************************************
  * @author Miles
  * 
- *         暫時還不知道Spring Security的運作原理，所以該專案先暫時把網路範例拿來使用
  * 
+ * 暫時還不知道Spring Security的運作原理，所以該專案先暫時把網路範例拿來使用
  * 
- *         該專案為Spring Security 練習，並且搭配Spring Boot整合 1.
- *         WebSecurityConfigurerAdapter 2.
- * 
- * 
+ * 該專案為Spring Security 練習，並且搭配Spring Boot整合
+ * 1.WebSecurityConfigurerAdapter 
+ * 2:
+ *
+ * 參考URL:https://www.cnblogs.com/cjsblog/p/9152455.html
+ *
  *******************************************************************************************/
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true) // 啟動Security註解
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// 防止 CSRF攻擊，中文名稱:跨站請求偽造 ，也被稱為:one click attack/session
 		// riding,縮寫為:CSRF/XSRF。
 		http.authorizeRequests().anyRequest().authenticated().and().csrf().disable();
-		
-//		http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/test").permitAll()
-//		
-//		.anyRequest().authenticated().and().formLogin()
-//	
-//		.loginPage("/test")
-//	
-//		.defaultSuccessUrl("/welcome").permitAll().and().logout().logoutUrl("/logout")
-//		
-//		.logoutSuccessUrl("/login").permitAll();
 
-		
-		
+		// http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/test").permitAll()
+		//
+		// .anyRequest().authenticated().and().formLogin()
+		//
+		// .loginPage("/test")
+		//
+		// .defaultSuccessUrl("/welcome").permitAll().and().logout().logoutUrl("/logout")
+		//
+		// .logoutSuccessUrl("/login").permitAll();
+
 		// 允許所有用戶訪問"/"與"/test"
-		http.authorizeRequests().antMatchers("test").permitAll()
-				
+		http.authorizeRequests().antMatchers("/test").permitAll()
+
 				.anyRequest().authenticated().and().formLogin()
-			
+
 				.loginPage("/aaaa")
-			
+
 				.defaultSuccessUrl("/welcome").permitAll().and().logout().logoutUrl("/logout")
-				
+
 				.logoutSuccessUrl("/login").permitAll();
 
-		
-			
 	}
 
 	// 暫時不知道這段的目的是什麼
