@@ -9,7 +9,7 @@ Takes an opinionated view of building production-ready Spring applications. Spri
 
 並且它是建構在Spring Cloud之上的基礎模組。<br>
 
-==================================================================================================<br>
+================================================================================<br>
 
 該練習主要使用技術:Spring Cloud、Spring Boot、Java 8、Spring Batch、OAuth、Log4J2、Spring Data JPA、MySQL。<br>
 
