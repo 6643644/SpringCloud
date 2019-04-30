@@ -15,8 +15,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * 暫時還不知道Spring Security的運作原理，所以該專案先暫時把網路範例拿來使用
  * 
  * 該專案為Spring Security 練習，並且搭配Spring Boot整合
- * 1.WebSecurityConfigurerAdapter 
- * 2:
+ * 1. @Configuration 代表這是一個Java　Config 配置檔
+ * 2. @EnableWebSecurity 啟動Spring Web Security 機制
+ * 3. @EnableGlobalMethodSecurity 還沒研究
+ *  
  *
  * 參考URL:https://www.cnblogs.com/cjsblog/p/9152455.html
  *
