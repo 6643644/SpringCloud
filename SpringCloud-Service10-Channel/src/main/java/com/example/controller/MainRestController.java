@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,9 @@ public class MainRestController {
 
 	@Autowired
 	FeignClientResource feignClientResource;
+	
+	@Autowired
+	ThisIsMain thisIsMain;
 
 	@RequestMapping("/test")
 	public String testJPA() {
@@ -58,4 +62,14 @@ public class MainRestController {
 		return feignClientResource.createUser(request);
 		
 	}
+	
+	@RequestMapping("/testBean")
+	public void testThisIsBean(){
+		System.out.println("thisIsMain is null?"+thisIsMain);
+		ThisIsBean thisIsBean = thisIsMain.getThisIsBean("Miles", "29");
+		System.out.println("thisIsMain is null?"+thisIsBean.getName()+","+thisIsBean.getValue());
+		
+	}
+	
+	
 }
