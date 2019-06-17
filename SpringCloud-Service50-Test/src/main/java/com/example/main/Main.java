@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.example.controller.ThisIsBean;
+
 
 /**
  * @author Miles
@@ -19,5 +21,8 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 	
-	
+//	@Bean
+//	public ThisIsBean createBean(String aaa,String bbb){
+//		return new ThisIsBean();
+//	}
 }
