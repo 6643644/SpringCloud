@@ -10,6 +10,9 @@ buildscript {
 	}
 }
 
+// compileJava 編譯 Java 原始碼
+// test 使用 JUnit 測試程式
+// jar 打包成 JAR 檔案
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
