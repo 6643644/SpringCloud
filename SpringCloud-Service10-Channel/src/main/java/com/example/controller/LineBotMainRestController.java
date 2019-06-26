@@ -23,7 +23,7 @@ import com.example.lineBot.EventWrapper;
 @RestController
 public class LineBotMainRestController {
 
-	private static final String accessToken = "Jh3R+TXDNerdzNNEDTh+eZn+F34CWWL8K5ekUa7fdJPfPXOeABkefc13wI2sjODJfpZxi0rEZr2pN8JfzRJuALcV1EmEn4swTa1qclNiuzshHkSv35NiifPQ/JB/mIfHuA/zbrr5i4gNu8nX/fOOCgdB04t89/1O/w1cDnyilFU=";
+	private static final String accessToken = "";
 
 	@RequestMapping(value = "/testLintBot")
 	public void callLineBotTest(@RequestBody String events) {
