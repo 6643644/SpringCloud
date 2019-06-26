@@ -40,6 +40,13 @@ dependencies {
 	//test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	
+	// line bot
+	//compile group: 'com.linecorp.bot', name: 'line-bot-api-client', version: '1.20.0'
+	//compile group: 'com.linecorp.bot', name: 'line-bot-model', version: '1.20.0'
+	//compile group: 'com.linecorp.bot', name: 'line-bot-servlet', version: '1.20.0'
+	//compile group: 'com.linecorp.bot', name: 'line-bot-spring-boot', version: '1.20.0'
+
+	
 }
 
 //排除預設的jar 我們要排除log4j的預設和logback防止衝突

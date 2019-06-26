@@ -21,7 +21,7 @@ eureka:
 zuul:
   routes:
     channel:  
-        url: http://localhost:38990 
+      url: http://localhost:38990 
     business:
       url : http://localhost:38991         
     
