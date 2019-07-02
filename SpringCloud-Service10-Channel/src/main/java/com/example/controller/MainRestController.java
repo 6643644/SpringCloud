@@ -2,9 +2,14 @@ package com.example.controller;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.resources.FeignClientResource;
 import com.example.resources.dto.UserRequest;
@@ -20,7 +25,7 @@ import com.example.util.LogUtils;
  * 
  *******************************************************************************************/
 @RestController
-public class MainRestController {
+public class MainRestController extends AbstractBaseApplication {
 
 	@Autowired
 	FeignClientResource feignClientResource;
@@ -28,6 +33,36 @@ public class MainRestController {
 	@RequestMapping("/test")
 	public String testJPA() {
 		return feignClientResource.testFeignClinetResource();
+	}
+
+
+	/**
+	 * 測試session的連結
+	 * 
+	 */
+	@RequestMapping("/testSession")
+	public void testChinnelMain(@RequestParam("key") String key,HttpServletRequest thishttpServletRequest) {
+		System.out.println("testChinnelMain key:"+key);
+		super.init(key,thishttpServletRequest);
+	}
+
+	@RequestMapping("/test/cookie")
+	public String testChinnelCookie(@RequestParam("browser") String browser, HttpServletRequest request,
+			HttpSession session) {
+		Object sessionBrowser = session.getAttribute("browser");
+		if (sessionBrowser == null) {
+			System.out.println("不存在session，设置browser=" + browser);
+			session.setAttribute("browser", browser);
+		} else {
+			System.out.println("存在session，browser=" + sessionBrowser.toString());
+		}
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null && cookies.length > 0) {
+			for (Cookie cookie : cookies) {
+				System.out.println(cookie.getName() + " : " + cookie.getValue());
+			}
+		}
+		return "index";
 	}
 
 	@RequestMapping("/allUser")

@@ -2,9 +2,14 @@ package com.example.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+
+import com.example.controller.AbstractBaseApplication;
 
 /**
  * @author Miles
@@ -23,22 +28,25 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = { "com.example" })
 @SpringBootApplication
-//@LineMessageHandler
-public class Main {
+public class Main extends AbstractBaseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
 	}
-	
-//	@EventMapping
-//    public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
-//        System.out.println("event: " + event);
-//        return new TextMessage(event.getMessage().getText());
-//    }
-//
-//    @EventMapping
-//    public void handleDefaultMessageEvent(Event event) {
-//        System.out.println("event: " + event);
-//    }
+
+	/**
+	 * session時間設置
+	 * @return
+	 */
+	@Bean
+	public EmbeddedServletContainerCustomizer containerCustomizer() {
+		return new EmbeddedServletContainerCustomizer() {
+			@Override
+			public void customize(ConfigurableEmbeddedServletContainer Container) {
+
+				Container.setSessionTimeout(12 * 60 * 60);
+			}
+		};
+	}
 
 }
