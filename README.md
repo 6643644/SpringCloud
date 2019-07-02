@@ -5,7 +5,15 @@
 
 專案管理:GIT、SourceTree。<br>
 
-Spring Cloud 中使用Config(Client、Server)、Eureka、Zuul、Feign Client
+Spring Cloud 中使用Config(Client、Server)、Eureka、Zuul、Feign Client<br>
+
+使用 spring boot redid<br>
+
+套用 spring session（尚未研究完成）
+
+使用 Line bot <br>
+
+未來導入token機制 <br>
 
 
 
