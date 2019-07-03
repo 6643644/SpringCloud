@@ -15,6 +15,7 @@ import com.example.resources.FeignClientResource;
 import com.example.resources.dto.UserRequest;
 import com.example.resources.dto.UserResponse;
 import com.example.util.LogUtils;
+import org.json.*;
 
 /******************************************************************************************
  * @author Miles
@@ -34,7 +35,12 @@ public class MainRestController extends AbstractBaseApplication {
 	public String testJPA() {
 		return feignClientResource.testFeignClinetResource();
 	}
-
+	
+	public void testJson(){
+		String str = "{'a':'b'}";
+		JSONObject obj = new JSONObject();
+		
+	}
 
 	/**
 	 * 測試session的連結
