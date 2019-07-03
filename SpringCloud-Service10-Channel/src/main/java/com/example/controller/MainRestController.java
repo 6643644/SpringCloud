@@ -35,41 +35,6 @@ public class MainRestController extends AbstractBaseApplication {
 	public String testJPA() {
 		return feignClientResource.testFeignClinetResource();
 	}
-	
-	public void testJson(){
-		String str = "{'a':'b'}";
-		JSONObject obj = new JSONObject();
-		
-	}
-
-	/**
-	 * 測試session的連結
-	 * 
-	 */
-	@RequestMapping("/testSession")
-	public void testChinnelMain(@RequestParam("key") String key,HttpServletRequest thishttpServletRequest) {
-		System.out.println("testChinnelMain key:"+key);
-		super.init(key,thishttpServletRequest);
-	}
-
-	@RequestMapping("/test/cookie")
-	public String testChinnelCookie(@RequestParam("browser") String browser, HttpServletRequest request,
-			HttpSession session) {
-		Object sessionBrowser = session.getAttribute("browser");
-		if (sessionBrowser == null) {
-			System.out.println("不存在session，设置browser=" + browser);
-			session.setAttribute("browser", browser);
-		} else {
-			System.out.println("存在session，browser=" + sessionBrowser.toString());
-		}
-		Cookie[] cookies = request.getCookies();
-		if (cookies != null && cookies.length > 0) {
-			for (Cookie cookie : cookies) {
-				System.out.println(cookie.getName() + " : " + cookie.getValue());
-			}
-		}
-		return "index";
-	}
 
 	@RequestMapping("/allUser")
 	public List<UserResponse> testLog4j2() {
