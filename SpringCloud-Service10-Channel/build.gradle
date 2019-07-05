@@ -29,8 +29,9 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-feign')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	
-	// Redis 
+	// Redis & Spring-session
 	compile ('org.springframework.boot:spring-boot-starter-data-redis')
+	//compile ('org.springframework.boot:spring-session-data-redis')
 	
 	// log4j2，並且加上這個才能辨認到log4j2.yml檔案 
 	compile('org.springframework.boot:spring-boot-starter-log4j2')
@@ -39,23 +40,17 @@ dependencies {
 	
 	//test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	
-	// line bot
-	//compile group: 'com.linecorp.bot', name: 'line-bot-api-client', version: '1.20.0'
-	//compile group: 'com.linecorp.bot', name: 'line-bot-model', version: '1.20.0'
-	//compile group: 'com.linecorp.bot', name: 'line-bot-servlet', version: '1.20.0'
-	//compile group: 'com.linecorp.bot', name: 'line-bot-spring-boot', version: '1.20.0'
-
-	
 }
 
-//排除預設的jar 我們要排除log4j的預設和logback防止衝突
 configurations.all {
+	  //排除預設的jar 我們要排除log4j的預設和logback防止衝突
       exclude group: 'log4j', module: 'log4j'
       exclude group: 'org.slf4j', module: 'slf4j-log4j12'
       exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
       exclude group: 'ch.qos.logback', module: 'logback-core'
       exclude group: 'ch.qos.logback', module: 'logback-classic'
+      // 排除內建的json轉換
+      exclude group: 'com.vaadin.external.google', module:'android-json'
 }
 
 dependencyManagement {

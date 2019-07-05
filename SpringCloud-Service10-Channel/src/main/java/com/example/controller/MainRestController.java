@@ -2,27 +2,23 @@ package com.example.controller;
 
 import java.util.List;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.resources.FeignClientResource;
 import com.example.resources.dto.UserRequest;
 import com.example.resources.dto.UserResponse;
 import com.example.util.LogUtils;
-import org.json.*;
 
 /******************************************************************************************
  * @author Miles
  * 
- *         該Service的入口端 1. @RestController 2. 使用了Apache Log4j 這個日誌系統是Spring
- *         Boot內建的，因為Spring Boot本身內建Tomcat所以預設Log4j功能 3. 但因為Spring boot
- *         1.4以後支援Log4j2，而且效能與速度上Log4j2大勝於其他的日誌系統，故我們就來使用看看。
+ * 該Service的入口端
+ * 1. @RestController Spring Restful實現 
+ * 2. 使用了Apache Log4j 這個日誌系統是Spring Boot內建的，因為Spring Boot本身內建Tomcat所以預設Log4j功能 
+ * 3. 但因為Spring boot
+ * 4. 1.4以後支援Log4j2，而且效能與速度上Log4j2大勝於其他的日誌系統，故我們就來使用看看。
  * 
  *******************************************************************************************/
 @RestController
@@ -63,4 +59,5 @@ public class MainRestController extends AbstractBaseApplication {
 		return feignClientResource.createUser(request);
 
 	}
+
 }
