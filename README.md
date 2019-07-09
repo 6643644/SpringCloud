@@ -3,7 +3,7 @@
 
 該練習主要使用技術:Spring Cloud、Spring Boot、Java 8、Spring Batch、OAuth、Log4J2、Spring Data JPA、MySQL等技術<br>
 
-並且加強對設計模式的觀念
+並且加強對設計模式的觀念與後端微服務應用
 
 專案管理: GIT、SourceTree。<br>
 
@@ -33,6 +33,9 @@ Server: Tomcat(Spring Boot內建)<br>
 1.Line bot(初步完成)<br>
 
 2.Spring Batch(暫不研究)<br>
+
+未來目標:
+建立前端與後端溝通的成品，並且前端導入(Angular)
 
 
 
