@@ -2,6 +2,8 @@ package com.example.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,6 +60,12 @@ public class MainRestController extends AbstractBaseApplication {
 		request.setAddress("新北市板橋區文化路6段544號499樓");
 		return feignClientResource.createUser(request);
 
+	}
+	
+	@RequestMapping("/tSession")
+	public String testSession(HttpServletRequest request){
+		return request.getSession().getId();
+		
 	}
 
 }
