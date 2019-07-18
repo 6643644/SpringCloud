@@ -13,7 +13,7 @@ import com.example.controller.ThisIsBean;
  * 
  *
  */
-@ComponentScan(basePackages = { "com.example" })
+@ComponentScan(basePackages = { "com.example","com.testThread" })
 @SpringBootApplication
 public class Main {
 

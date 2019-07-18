@@ -30,8 +30,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	
 	// Redis & Spring-session
+	// Spring 1.5 以後只支援spring-boot-starter-data-redis
+	// Spring 1.4 之前只支援spring-boot-starter-redis
 	compile ('org.springframework.boot:spring-boot-starter-data-redis')
-	//compile ('org.springframework.boot:spring-session-data-redis')
+	// compile ('org.springframework.session:spring-session-data-redis')
 	
 	
 	//test

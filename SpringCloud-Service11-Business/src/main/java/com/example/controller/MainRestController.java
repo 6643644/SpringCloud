@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.User;
@@ -30,16 +31,23 @@ public class MainRestController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@RequestMapping("/bus/test")
+	@RequestMapping(path = "/bus/test")
 	public String testFeignClinetResourceClient() {
 		log.info("URL:/Test1;testFeignClinetResourceClient()");
 		return "testFeignClinetResource";
 	}
 
-	@RequestMapping("/bus/jpa/allUser")
+	@RequestMapping(path = "/bus/jpa/allUser")
 	public ResponseEntity<?> getAllUserByJPA() {
 		log.info("URL:/TestJPA;getAllUserByJPA()");
 		List<User> users = userRepository.findAll();
+		ResponseEntity<?> response = ResponseEntity.ok(users);
+		return response;
+	}
+
+	@RequestMapping(path = "/bus/jpa/user", method = RequestMethod.GET)
+	public ResponseEntity<?> getUserById(@RequestParam("id") Integer id) {
+		User users = userRepository.findById(id);
 		ResponseEntity<?> response = ResponseEntity.ok(users);
 		return response;
 	}

@@ -2,7 +2,6 @@ package com.example.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,11 +60,4 @@ public class MainRestController extends AbstractBaseApplication {
 		return feignClientResource.createUser(request);
 
 	}
-	
-	@RequestMapping("/tSession")
-	public String testSession(HttpServletRequest request){
-		return request.getSession().getId();
-		
-	}
-
 }
