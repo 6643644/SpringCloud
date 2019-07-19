@@ -1,4 +1,4 @@
-package com.designPatterns.simpleFactoryPattern;
+package com.designPatterns.simpleFactoryPattern.fileType;
 
 public class JSONLoader implements Loader {
 

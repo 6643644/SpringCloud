@@ -1,6 +1,8 @@
 package com.designPatterns.simpleFactoryPattern;
 
-import com.designPatterns.simpleFactoryPattern.LoaderFactory.LoaderType;
+import com.designPatterns.simpleFactoryPattern.factory.LoaderFactory;
+import com.designPatterns.simpleFactoryPattern.factory.LoaderFactory.LoaderType;
+import com.designPatterns.simpleFactoryPattern.fileType.Loader;
 
 public class SimpleFactoryPatternMain {
 
@@ -8,6 +10,7 @@ public class SimpleFactoryPatternMain {
 		//這是尚未使用Simple Factory Pattern 的寫法
 //		Loader loader = new XMLLoader(); // 直接用new建立物件
 //	    loader.load();
+		
 		
 		Loader loader = LoaderFactory.getLoader(LoaderType.JSON);
 	    loader.load();
