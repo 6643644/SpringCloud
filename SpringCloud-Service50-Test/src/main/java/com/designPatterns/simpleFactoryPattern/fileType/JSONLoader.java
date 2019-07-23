@@ -1,5 +1,12 @@
 package com.designPatterns.simpleFactoryPattern.fileType;
 
+/******************************************************************************************
+ * @author Miles
+ *  Simple Factory Pattern 
+ *  
+ *  
+ * 
+******************************************************************************************/
 public class JSONLoader implements Loader {
 
 	@Override
