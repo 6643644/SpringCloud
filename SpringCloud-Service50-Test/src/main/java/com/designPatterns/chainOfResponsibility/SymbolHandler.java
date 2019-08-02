@@ -9,9 +9,10 @@ public class SymbolHandler extends Handler {
 
 	@Override
 	void handle(char c) {
+		System.out.println("(1)");
 		System.out.println("Symbol has been handled");
 		doNext(c);
-		System.out.println("(1)");
+		
 	}
 
 }

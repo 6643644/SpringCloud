@@ -8,11 +8,12 @@ public class DigitHandler extends Handler {
 
 	@Override
 	void handle(char c) {
+		System.out.println("(2)");
 		if (Character.isDigit(c)) {
 			System.out.println("Digit has been handled");
 		}
 		doNext(c);
-		System.out.println("(2)");
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.sample.test.GroupDataQuiz;
+package com.sample.test.groupDataQuiz;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,9 +41,10 @@ public class GroupDataQuiz {
 		 */
 		Map<String, List<Map<String, Object>>> groupData = new LinkedHashMap<String, List<Map<String, Object>>>();
 
-		groupData = dataList.stream()
-				.collect(Collectors.groupingBy(m -> (String) m.get("inslin"), TreeMap::new, Collectors.toList()));
-
+		groupData = 
+		dataList.stream().collect(Collectors.groupingBy(m -> (String) m.get("inslin"), TreeMap::new, Collectors.toList()));
+		dataList.stream().collect(Collectors.groupingBy(d-> d.get("inslin"),Collectors.toList()));
+//		dataList.stream().collect(collector)
 		groupDataByInslin(groupData);
 
 	}

@@ -8,11 +8,12 @@ public class CharacterHandler extends Handler {
 
 	@Override
 	void handle(char c) {
+		System.out.println("(3)");
 		if (Character.isLetter(c)) {
 			System.out.println("Character has been handled");
 		}
 		doNext(c);
-		System.out.println("(3)");
+		
 	}
 
 }
