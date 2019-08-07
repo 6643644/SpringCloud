@@ -1,4 +1,4 @@
-package com.designPatterns.chainOfResponsibility;
+package com.designPatterns.chainOfResponsibilityPattern;
 
 public class Client {
 

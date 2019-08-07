@@ -16,7 +16,7 @@ public interface FeignClientResource {
 
 	@RequestMapping(value = "/bus/test", method = RequestMethod.GET)
 	public String testFeignClinetResource();
-
+	
 	@RequestMapping(value = "/bus/jpa/allUser", method = RequestMethod.GET)
 	public List<UserResponse> getAllUser();
 

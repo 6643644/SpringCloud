@@ -52,15 +52,14 @@ public class MainRestController {
 
 	@RequestMapping(value = "/tSession/User", method = RequestMethod.GET)
 	public String testSessionByUser(@RequestParam("id") Integer id) {
-		System.out.println("testSessionByUser:" + id);
-
 		UserResponse responseRedis = redisTemplate.opsForValue().get(id.toString());
 		if (responseRedis == null) {
 			System.out.println("responseRedis is null");
 			responseRedis = feignClientResource.getUserById(id);
-			redisTemplate.opsForValue().set(responseRedis.getId().toString(), responseRedis);
+			if (responseRedis != null) {
+				redisTemplate.opsForValue().set(responseRedis.getId().toString(), responseRedis);
+			}
 		}
-
 		return "test user Id:" + responseRedis.getId() + ",Name:" + responseRedis.getName();
 	}
 }
